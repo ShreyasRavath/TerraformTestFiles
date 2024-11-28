@@ -7,3 +7,32 @@ resource "aws_vpc" "Test-VPC" {
     Env  = "Dev"
   }
 }
+
+resource "aws_instance" "app_server" {
+  ami           = data.aws_ami.myami.id
+  instance_type = "t2.micro"
+
+  tags = {
+    Name = "ExampleAppServerInstance"
+  }
+}
+
+data "aws_ami" "myami" {
+  most_recent      = true
+  owners           = ["amazon"]
+
+  filter {
+    name   = "name"
+    values = ["amzn2-ami-kernel-5.10*"]
+  }
+
+  filter {
+    name   = "root-device-type"
+    values = ["ebs"]
+  }
+
+  filter {
+    name   = "virtualization-type"
+    values = ["hvm"]
+  }
+}
