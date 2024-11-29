@@ -7,7 +7,7 @@ resource "aws_vpc" "Test-VPC" {
     Env  = "Dev"
   }
 }
-/*
+
 resource "aws_instance" "app_server" {
   ami           = data.aws_ami.myami.id
   instance_type = "t2.micro"
@@ -17,7 +17,7 @@ resource "aws_instance" "app_server" {
     Env = "Development"
   }
 }
-*/
+
 data "aws_ami" "myami" {
   most_recent      = true
   owners           = ["amazon"]
