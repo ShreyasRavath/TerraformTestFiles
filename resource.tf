@@ -10,7 +10,7 @@ resource "aws_vpc" "Test-VPC" {
 
 resource "aws_instance" "app_server" {
   ami           = data.aws_ami.myami.id
-  instance_type = "t2.4xlarge"
+  instance_type = "t2.medium"
 
   tags = {
     Name = "ExampleAppServerInstance"
