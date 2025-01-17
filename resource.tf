@@ -18,6 +18,10 @@ resource "aws_instance" "app_server" {
   }
 }
 
+resource "s3_bucket" "mybucket" {
+bucket = "tfjan2025asdfjoaisdufioasjdf5522"
+}
+
 data "aws_ami" "myami" {
   most_recent      = true
   owners           = ["amazon"]
