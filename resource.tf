@@ -18,7 +18,7 @@ resource "aws_instance" "app_server" {
   }
 }
 
-resource "s3_bucket" "mybucket" {
+resource "aws_s3_bucket" "mybucket" {
 bucket = "tfjan2025asdfjoaisdufioasjdf5522"
 }
 
